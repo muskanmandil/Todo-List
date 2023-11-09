@@ -52,7 +52,6 @@ h1{
 #taskList {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 
@@ -61,7 +60,6 @@ h1{
     align-items: center;
     display: flex;
     font-size: 20px;
-    /* gap: 16px; */
 }
 
 .taskContent {
