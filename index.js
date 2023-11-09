@@ -1,10 +1,11 @@
 // Defining Elements
-const inputSpace = document.getElementById("input");
-const addBtn = document.getElementById("add");
+const inputSpace = document.getElementById("inputSpace");
+const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 
 // Function for adding Task
 const addTaskDiv = () => {
+
     // Creating Task Div
     let taskDiv = document.createElement("div");
     taskDiv.classList.add("task");
@@ -12,7 +13,7 @@ const addTaskDiv = () => {
     // Creating Check/Uncheck Button
     let checkBtn = document.createElement("div");
     checkBtn.id = "checkBtn";
-    checkBtn.classList.add("unchecked");
+    checkBtn.innerHTML = `<i class="fa-solid fa-check"></i>`;
     toggle(checkBtn);
 
     // Creating Delete Button
@@ -25,6 +26,7 @@ const addTaskDiv = () => {
     let taskContent = document.createElement("p");
     taskContent.classList.add("taskContent");
     taskContent.textContent = inputSpace.value;
+    editTask(taskContent);
 
     // Appending Items in Task Div
     taskDiv.appendChild(checkBtn);
@@ -39,49 +41,47 @@ const addTaskDiv = () => {
 }
 
 // Event Listeners to add Task
-addBtn.addEventListener("click", addTaskDiv);
+
+// Mouse
+addBtn.addEventListener("click", () => {
+    if(inputSpace.value!=""){
+        addTaskDiv();
+    }
+});
+
+// Keyboard
 inputSpace.addEventListener("keydown", (event) => {
-    if (event.key == "Enter") {
+    if (inputSpace.value!="" && event.key == "Enter") {
         addTaskDiv();
     }
 })
 
 
 // Toggle Function for Check / Uncheck
-const toggle = (Btn) => {
-    Btn.addEventListener("click", () => {
-        if (Btn.classList.contains("checked")) {
-            Btn.classList.remove("checked");
-            Btn.classList.add("unchecked");
-            Btn.innerHTML = "";
-            Btn.nextSibling.classList.remove("linethrough");
-        } else {
-            Btn.classList.remove("unchecked");
-            Btn.classList.add("checked");
-            Btn.innerHTML = `<i class="fa-solid fa-check"></i>`
-            Btn.nextSibling.classList.add("linethrough");
-        }
+const toggle = (btn) => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("checked");
+        btn.nextSibling.classList.toggle("linethrough");
     })
-
 }
 
 
 // Delete Function
-const deleteTask = (Btn) => {
-    Btn.addEventListener("click", ()=>{
-        let taskToDelete = Btn.parentNode;
-        taskList.removeChild(taskToDelete);
+const deleteTask = (btn) => {
+    btn.addEventListener("click", ()=>{
+        btn.parentNode.remove();
     })
-    
 }
 
 
-
-
-
-
-
-
-
-
-
+// Edit Function
+const editTask = (btn) => {
+    btn.addEventListener("click", () => {
+        btn.contentEditable = true;
+    })
+    btn.addEventListener("keydown", (event)=>{
+        if(event.key=="Enter"){
+            btn.contentEditable = false;
+        }
+    })
+}
