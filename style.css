@@ -1,0 +1,92 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #DCBFFF;
+}
+
+.container{
+    background-color: beige;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 5% auto;
+    padding: 50px;
+    width: fit-content
+}
+
+h1{
+    color: #FF78C4;
+    font-size: 40px;
+    text-align: center;
+}
+
+#input{
+    border: none;
+    border-radius: 32px;
+    font-size: 18px;
+    padding: 16px;
+    width: 400px;
+}
+
+button {
+    background-color: #D0A2F7;
+    border: none;
+    border-radius: 32px;
+    color: beige;
+    font-weight: 600;
+    padding: 16px 32px;
+}
+
+#taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task{
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    gap: 16px;
+}
+
+.taskContent {
+    width: 400px;
+}
+
+.linethrough{
+    text-decoration: line-through;
+}
+
+.unchecked{
+    background-color: white;
+    /* border: 0.2px solid grey; */
+    border-radius: 100%;
+    height: 28px;
+    width: 28px;
+}
+
+.checked{
+    align-items: center;
+    background-color:#DCBFFF;
+    /* border: 0.2px solid grey; */
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    height: 28px;
+    justify-content: center;
+    width: 28px;
+}
+
+#deleteBtn {
+    color: red;
+}
+
+footer { 
+    text-align: center;
+}
