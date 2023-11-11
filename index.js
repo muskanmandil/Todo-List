@@ -44,15 +44,21 @@ const addTaskDiv = () => {
 
 // Mouse
 addBtn.addEventListener("click", () => {
-    if(inputSpace.value!=""){
+    if (inputSpace.value != "") {
         addTaskDiv();
     }
 });
 
 // Keyboard
 inputSpace.addEventListener("keydown", (event) => {
-    if (inputSpace.value!="" && event.key == "Enter") {
+    if (inputSpace.value != "" && event.key == "Enter") {
         addTaskDiv();
+    }
+})
+
+document.addEventListener("keydown", (event) => {
+    if (!event.target.classList.contains("taskContent")) {
+        inputSpace.focus();
     }
 })
 
@@ -68,7 +74,7 @@ const toggle = (btn) => {
 
 // Delete Function
 const deleteTask = (btn) => {
-    btn.addEventListener("click", ()=>{
+    btn.addEventListener("click", () => {
         btn.parentNode.remove();
     })
 }
@@ -79,8 +85,8 @@ const editTask = (btn) => {
     btn.addEventListener("click", () => {
         btn.contentEditable = true;
     })
-    btn.addEventListener("keydown", (event)=>{
-        if(event.key=="Enter"){
+    btn.addEventListener("keydown", (event) => {
+        if (event.key == "Enter") {
             btn.contentEditable = false;
         }
     })
