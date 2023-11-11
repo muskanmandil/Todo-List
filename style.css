@@ -1,105 +1,160 @@
 /* HTML Elements */
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-*:focus{
-    outline: none;
+*:focus {
+  outline: none;
 }
 
 body {
-    background-color: #DCBFFF;
+  background-color: #dcbfff;
 }
 
 /* Container */
-.container{
-    background-color: beige;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin: 5% auto;
-    padding: 50px;
-    width: fit-content;
+.container {
+  background-color: beige;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 5% auto;
+  padding: 40px;
+  width: fit-content;
 }
 
 /* Heading */
-h1{
-    color: #FF78C4;
-    font-size: 40px;
-    text-align: center;
+h1 {
+  color: #ff78c4;
+  font-size: 40px;
+  text-align: center;
 }
 
-
 /* Input Panel */
-#inputSpace{
-    border: none;
-    border-radius: 32px;
-    font-size: 18px;
-    padding: 16px;
-    width: 400px;
+#inputSpace {
+  border: none;
+  border-radius: 32px;
+  font-size: 18px;
+  max-width: 600px;
+  padding: 16px;
+  width: 30vw;
 }
 
 #addBtn {
-    background-color: #D0A2F7;
-    border: none;
-    border-radius: 32px;
-    color: beige;
-    font-weight: 600;
-    padding: 16px 32px;
+  background-color: #d0a2f7;
+  border: none;
+  border-radius: 32px;
+  color: beige;
+  font-weight: 600;
+  padding: 16px 32px;
 }
-
 
 /* Task List */
 #taskList {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-
 /* Task */
-.task{
-    align-items: center;
-    display: flex;
-    font-size: 20px;
+.task {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
 }
 
 .taskContent {
-    padding: 10px 16px 10px 8px;
-    width: 400px;
+  padding: 10px 16px 10px 8px;
+  max-width: 500px;
+  width: 30vw;
 }
 
-.linethrough{
-    text-decoration: line-through;
+.linethrough {
+  text-decoration: line-through;
 }
 
-#checkBtn{
-    align-items: center;
-    background-color: white;
-    border-radius: 100%;
-    color: white;
-    display: flex;
-    height: 28px;
-    justify-content: center;
-    margin-right: 8px;
-    width: 28px;
+#checkBtn {
+  align-items: center;
+  background-color: white;
+  border-radius: 100%;
+  color: white;
+  display: flex;
+  height: 28px;
+  justify-content: center;
+  margin-right: 8px;
+  width: 28px;
 }
 
-.checked{
-    background-color:#DCBFFF !important;
+.checked {
+  background-color: #dcbfff !important;
 }
 
 #deleteBtn {
-    color: red;
-    font-size: 28px;
-    padding: 10px;
+  color: red;
+  font-size: 28px;
+  padding: 10px;
 }
 
-
-
 /* Footer */
-footer { 
-    text-align: center;
+footer {
+  text-align: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1080px) {
+  #inputSpace,
+  .taskContent {
+    width: 40vw;
+  }
+  footer {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 798px) {
+  .container {
+    gap: 24px;
+    padding: 32px;
+  }
+  #inputSpace,
+  .taskContent {
+    width: 50vw;
+    padding: 12px;
+  }
+  footer {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    gap: 16px;
+    padding: 24px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  #inputSpace,
+  .taskContent {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  #addBtn {
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 12px 20px;
+  }
+  #checkBtn {
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
+  }
+  #deleteBtn {
+    font-size: 20px;
+    padding: 4px;
+  }
+  footer {
+    font-size: 10px;
+  }
 }
